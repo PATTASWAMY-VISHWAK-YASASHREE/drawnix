@@ -5,5 +5,14 @@
   "projectType": "application",
   "tags": [],
   "// targets": "to see all targets run: nx show project web --web",
-  "targets": {}
+  "targets": {},
+  "_comments": {
+    "purpose": "Nx project configuration for the Drawnix web application",
+    "description": "This configuration defines the web app as an Nx application project within the monorepo",
+    "sourceRoot": "Specifies where the source code is located relative to the project root",
+    "projectType": "Defines this as an 'application' rather than a 'library' for proper Nx tooling",
+    "tags": "Currently empty but can be used for project categorization and dependency rules",
+    "targets": "Build, test, serve, and other executable tasks are defined here (currently managed externally)",
+    "schema": "Points to Nx schema for IntelliSense and validation in IDEs"
+  }
 }
