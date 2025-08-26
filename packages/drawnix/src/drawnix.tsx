@@ -37,6 +37,8 @@ import { TTDDialog } from './components/ttd-dialog/ttd-dialog';
 import { CleanConfirm } from './components/clean-confirm/clean-confirm';
 import { buildTextLinkPlugin } from './plugins/with-text-link';
 import { LinkPopup } from './components/popup/link-popup/link-popup';
+import { I18nProvider, useI18n } from './utils/i18n';
+import { translateBoardTexts } from './utils/board-i18n';
 
 export type DrawnixProps = {
   value: PlaitElement[];
@@ -61,6 +63,7 @@ export const Drawnix: React.FC<DrawnixProps> = ({
   onValueChange,
   afterInit,
 }) => {
+  const { locale } = useI18n();
   const options: PlaitBoardOptions = {
     readonly: false,
     hideScrollbar: false,
@@ -107,9 +110,18 @@ export const Drawnix: React.FC<DrawnixProps> = ({
 
   const containerRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    if (board) {
+      try {
+        translateBoardTexts(board.children as any, locale);
+      } catch {}
+    }
+  }, [locale, board]);
+
   return (
-    <DrawnixContext.Provider value={{ appState, setAppState }}>
-      <div
+    <I18nProvider>
+      <DrawnixContext.Provider value={{ appState, setAppState }}>
+        <div
         className={classNames('drawnix', {
           'drawnix--mobile': appState.isMobile,
         })}
@@ -147,5 +159,6 @@ export const Drawnix: React.FC<DrawnixProps> = ({
         </Wrapper>
       </div>
     </DrawnixContext.Provider>
+    </I18nProvider>
   );
 };

@@ -11,7 +11,7 @@ export const initializeData: PlaitElement[] = [
     text: {
       children: [
         {
-          text: '结束',
+          text: 'End',
         },
       ],
       align: 'center',
@@ -32,7 +32,7 @@ export const initializeData: PlaitElement[] = [
     text: {
       children: [
         {
-          text: '过程',
+          text: 'Process',
         },
       ],
       align: 'center',
@@ -53,7 +53,7 @@ export const initializeData: PlaitElement[] = [
     text: {
       children: [
         {
-          text: '判断',
+          text: 'Decision',
         },
       ],
       align: 'center',
@@ -74,7 +74,7 @@ export const initializeData: PlaitElement[] = [
     text: {
       children: [
         {
-          text: '过程',
+          text: 'Process',
         },
       ],
       align: 'center',
@@ -95,7 +95,7 @@ export const initializeData: PlaitElement[] = [
     text: {
       children: [
         {
-          text: '开始',
+          text: 'Start',
         },
       ],
       align: 'center',
@@ -142,7 +142,7 @@ export const initializeData: PlaitElement[] = [
         text: {
           children: [
             {
-              text: '否',
+              text: 'No',
             },
           ],
         },
@@ -177,7 +177,7 @@ export const initializeData: PlaitElement[] = [
         text: {
           children: [
             {
-              text: '是',
+              text: 'Yes',
             },
           ],
         },
@@ -250,7 +250,7 @@ export const initializeData: PlaitElement[] = [
       topic: {
         children: [
           {
-            text: '思维导图',
+            text: 'Mindmap',
           },
         ],
       },
@@ -262,7 +262,7 @@ export const initializeData: PlaitElement[] = [
           topic: {
             children: [
               {
-                text: '观点一',
+                text: 'Topic 1',
               },
             ],
           },
@@ -309,7 +309,7 @@ export const initializeData: PlaitElement[] = [
           topic: {
             children: [
               {
-                text: '观点二',
+                text: 'Topic 2',
               },
             ],
           },
@@ -356,7 +356,7 @@ export const initializeData: PlaitElement[] = [
           topic: {
             children: [
               {
-                text: '观点三',
+                text: 'Topic 3',
               },
             ],
           },
@@ -403,7 +403,7 @@ export const initializeData: PlaitElement[] = [
           topic: {
             children: [
               {
-                text: '观点四',
+                text: 'Topic 4',
               },
             ],
           },

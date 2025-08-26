@@ -15,6 +15,7 @@ import {
   WritableClipboardOperationType,
 } from '@plait/core';
 import { MindElement } from '@plait/mind';
+import { useI18n } from '../../utils/i18n';
 
 export interface MarkdownToDrawnixLibProps {
   loaded: boolean;
@@ -47,6 +48,7 @@ const MARKDOWN_EXAMPLE = `# 我开始了
 #### 哇 是个程序员 🤯 ⌨️ 💡 👩 💻`;
 
 const MarkdownToDrawnix = () => {
+  const { t } = useI18n();
   const { appState, setAppState } = useDrawnix();
   const [markdownToDrawnixLib, setMarkdownToDrawnixLib] =
     useState<MarkdownToDrawnixLibProps>({
@@ -130,10 +132,10 @@ const MarkdownToDrawnix = () => {
 
   return (
     <TTDDialogPanels>
-        <TTDDialogPanel label={'Markdown 语法'}>
+        <TTDDialogPanel label={t('ttd.markdown.label')}>
           <TTDDialogInput
             input={text}
-            placeholder={'在此处编写 Markdown 文本定义...'}
+            placeholder={t('ttd.markdown.placeholder')}
             onChange={(event) => setText(event.target.value)}
             onKeyboardSubmit={() => {
               // insertToBoard();
@@ -141,12 +143,12 @@ const MarkdownToDrawnix = () => {
           />
         </TTDDialogPanel>
         <TTDDialogPanel
-          label={'预览'}
+          label={t('ttd.preview')}
           panelAction={{
             action: () => {
               insertToBoard();
             },
-            label: '插入',
+            label: t('ttd.insert'),
           }}
           renderSubmitShortcut={() => <TTDDialogSubmitShortcut />}
         >

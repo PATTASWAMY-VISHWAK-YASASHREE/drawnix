@@ -19,6 +19,7 @@ import {
 } from '@plait/core';
 import type { MermaidConfig } from '@plait-board/mermaid-to-drawnix/dist';
 import type { MermaidToDrawnixResult } from '@plait-board/mermaid-to-drawnix/dist/interfaces';
+import { useI18n } from '../../utils/i18n';
 
 export interface MermaidToDrawnixLibProps {
   loaded: boolean;
@@ -35,6 +36,7 @@ const MERMAID_EXAMPLE =
 
 const MermaidToDrawnix = () => {
   const { appState, setAppState } = useDrawnix();
+  const { t } = useI18n();
   const [mermaidToDrawnixLib, setMermaidToDrawnixLib] =
     useState<MermaidToDrawnixLibProps>({
       loaded: false,
@@ -152,10 +154,10 @@ const MermaidToDrawnix = () => {
         。其他类型在 Drawnix 中将以图片呈现。
       </div>
       <TTDDialogPanels>
-        <TTDDialogPanel label={'Mermaid 语法'}>
+        <TTDDialogPanel label={t('ttd.mermaid.label')}>
           <TTDDialogInput
             input={text}
-            placeholder={'在此处编写 Mermaid 图表定义...'}
+            placeholder={t('ttd.mermaid.placeholder')}
             onChange={(event) => setText(event.target.value)}
             onKeyboardSubmit={() => {
               insertToBoard();
@@ -163,12 +165,12 @@ const MermaidToDrawnix = () => {
           />
         </TTDDialogPanel>
         <TTDDialogPanel
-          label={'预览'}
+          label={t('ttd.preview')}
           panelAction={{
             action: () => {
               insertToBoard();
             },
-            label: '插入',
+            label: t('ttd.insert'),
           }}
           renderSubmitShortcut={() => <TTDDialogSubmitShortcut />}
         >

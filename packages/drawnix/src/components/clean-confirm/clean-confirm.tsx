@@ -2,6 +2,7 @@ import { Dialog, DialogContent } from '../dialog/dialog';
 import { useDrawnix } from '../../hooks/use-drawnix';
 import './clean-confirm.scss';
 import { useBoard } from '@plait-board/react-board';
+import { useI18n } from '../../utils/i18n';
 
 export const CleanConfirm = ({
   container,
@@ -10,6 +11,7 @@ export const CleanConfirm = ({
 }) => {
   const { appState, setAppState } = useDrawnix();
   const board = useBoard();
+  const { t } = useI18n();
   return (
     <Dialog
       open={appState.openCleanConfirm}
@@ -18,10 +20,8 @@ export const CleanConfirm = ({
       }}
     >
       <DialogContent className="clean-confirm" container={container}>
-        <h2 className="clean-confirm__title">清除画布</h2>
-        <p className="clean-confirm__description">
-          这将会清除整个画布。你是否要继续?
-        </p>
+        <h2 className="clean-confirm__title">{t('clean.title')}</h2>
+        <p className="clean-confirm__description">{t('clean.description')}</p>
         <div className="clean-confirm__actions">
           <button
             className="clean-confirm__button clean-confirm__button--cancel"
@@ -29,7 +29,7 @@ export const CleanConfirm = ({
               setAppState({ ...appState, openCleanConfirm: false });
             }}
           >
-            取消
+            {t('clean.cancel')}
           </button>
           <button
             className="clean-confirm__button clean-confirm__button--ok"
@@ -39,7 +39,7 @@ export const CleanConfirm = ({
               setAppState({ ...appState, openCleanConfirm: false });
             }}
           >
-            确认
+            {t('clean.confirm')}
           </button>
         </div>
       </DialogContent>

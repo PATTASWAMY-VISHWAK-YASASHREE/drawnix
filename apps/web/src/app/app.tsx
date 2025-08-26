@@ -3,6 +3,7 @@ import { initializeData } from './initialize-data';
 import { Drawnix } from '@drawnix/drawnix';
 import { PlaitBoard, PlaitElement, PlaitTheme, Viewport } from '@plait/core';
 import localforage from 'localforage';
+import { replaceDefaultChineseTexts } from '@drawnix/drawnix';
 
 // 1个月后移出删除兼容
 const OLD_DRAWNIX_LOCAL_DATA_KEY = 'drawnix-local-data';
@@ -36,7 +37,9 @@ export function App() {
         localStorage.removeItem(OLD_DRAWNIX_LOCAL_DATA_KEY);
         return;
       }
-      setValue({ children: initializeData });
+      const initial = JSON.parse(JSON.stringify(initializeData));
+      replaceDefaultChineseTexts(initial as any);
+      setValue({ children: initial });
     };
 
     loadData();

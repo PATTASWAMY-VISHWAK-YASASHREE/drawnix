@@ -22,12 +22,15 @@ import { useState } from 'react';
 import { CleanBoard, OpenFile, SaveAsImage, SaveToFile, Socials } from './app-menu-items';
 import Menu from '../../menu/menu';
 import MenuSeparator from '../../menu/menu-separator';
+import MenuItem from '../../menu/menu-item';
+import { useI18n } from '../../../utils/i18n';
 
 export const AppToolbar = () => {
   const board = useBoard();
   const container = PlaitBoard.getBoardContainer(board);
   const selectedElements = getSelectedElements(board);
   const [appMenuOpen, setAppMenuOpen] = useState(false);
+  const { t, locale, setLocale } = useI18n();
   const isUndoDisabled = board.history.undos.length <= 0;
   const isRedoDisabled = board.history.redos.length <= 0;
   return (
@@ -51,8 +54,8 @@ export const AppToolbar = () => {
               visible={true}
               selected={appMenuOpen}
               icon={MenuIcon}
-              title={`App Menu`}
-              aria-label={`App Menu`}
+              title={t('app.menu')}
+              aria-label={t('app.menu')}
               onPointerDown={() => {
                 setAppMenuOpen(!appMenuOpen);
               }}
@@ -69,6 +72,15 @@ export const AppToolbar = () => {
               <SaveAsImage></SaveAsImage>
               <CleanBoard></CleanBoard>
               <MenuSeparator />
+              <MenuItem
+                onSelect={() => {
+                  setLocale(locale === 'en' ? 'zh' : 'en');
+                }}
+                aria-label={t('lang.selector')}
+              >
+                {locale === 'en' ? t('lang.zh') : t('lang.en')}
+              </MenuItem>
+              <MenuSeparator />
               <Socials />
             </Menu>
           </PopoverContent>
@@ -78,8 +90,8 @@ export const AppToolbar = () => {
           type="icon"
           icon={UndoIcon}
           visible={true}
-          title={`Undo`}
-          aria-label={`Undo`}
+          title={t('toolbar.undo')}
+          aria-label={t('toolbar.undo')}
           onPointerUp={() => {
             board.undo();
           }}
@@ -90,8 +102,8 @@ export const AppToolbar = () => {
           type="icon"
           icon={RedoIcon}
           visible={true}
-          title={`Redo`}
-          aria-label={`Redo`}
+          title={t('toolbar.redo')}
+          aria-label={t('toolbar.redo')}
           onPointerUp={() => {
             board.redo();
           }}
@@ -104,8 +116,8 @@ export const AppToolbar = () => {
             type="icon"
             icon={DuplicateIcon}
             visible={true}
-            title={`Duplicate`}
-            aria-label={`Duplicate`}
+            title={t('toolbar.duplicate')}
+            aria-label={t('toolbar.duplicate')}
             onPointerUp={() => {
               duplicateElements(board);
             }}
@@ -118,8 +130,8 @@ export const AppToolbar = () => {
             type="icon"
             icon={TrashIcon}
             visible={true}
-            title={`Trash`}
-            aria-label={`Trash`}
+            title={t('toolbar.trash')}
+            aria-label={t('toolbar.trash')}
             onPointerUp={() => {
               deleteFragment(board);
             }}
