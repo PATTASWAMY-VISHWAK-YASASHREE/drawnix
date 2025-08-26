@@ -19,5 +19,19 @@
     "src/**/*.spec.jsx",
     "src/**/*.test.jsx"
   ],
-  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"]
+  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
+  "_comments": {
+    "purpose": "TypeScript configuration specifically for application code (excluding tests)",
+    "description": "Extends the main tsconfig with production build settings",
+    "extends": "Inherits from the main tsconfig.json in the same directory",
+    "outDir": "Compiled JavaScript output directory for build artifacts",
+    "types": {
+      "node": "Node.js type definitions for global objects and modules",
+      "cssmodule": "Type definitions for CSS Module imports (.module.scss files)",
+      "image": "Type definitions for image imports (PNG, SVG, etc.)",
+      "vite/client": "Vite-specific types for HMR and import.meta"
+    },
+    "exclude": "Excludes all test files from production builds",
+    "include": "Includes all source files in TypeScript and JavaScript formats"
+  }
 }

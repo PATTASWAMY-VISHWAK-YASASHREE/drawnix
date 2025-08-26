@@ -21,5 +21,19 @@
     "src/**/*.test.jsx",
     "src/**/*.spec.jsx",
     "src/**/*.d.ts"
-  ]
+  ],
+  "_comments": {
+    "purpose": "TypeScript configuration specifically for test files and Jest setup",
+    "description": "Extends main tsconfig with test-specific settings and type definitions",
+    "extends": "Inherits from the main tsconfig.json in the same directory",
+    "outDir": "Compiled test files output directory (same as app for consistency)",
+    "module": "Uses CommonJS for compatibility with Jest testing framework",
+    "types": {
+      "jest": "Jest testing framework type definitions for test utilities and matchers",
+      "node": "Node.js type definitions for test environment globals",
+      "cssmodule": "Type definitions for CSS Module imports in test files",
+      "image": "Type definitions for image imports in test files"
+    },
+    "include": "Includes all test files, Jest config, and TypeScript declaration files"
+  }
 }

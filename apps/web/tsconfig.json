@@ -17,5 +17,17 @@
       "path": "./tsconfig.spec.json"
     }
   ],
-  "extends": "../../tsconfig.base.json"
+  "extends": "../../tsconfig.base.json",
+  "_comments": {
+    "purpose": "Main TypeScript configuration for the Drawnix web application",
+    "description": "This is a composite configuration that orchestrates app and test configurations",
+    "jsx": "Uses React 17+ automatic JSX transform (no need to import React)",
+    "allowJs": "Disabled to enforce TypeScript usage for better type safety",
+    "esModuleInterop": "Disabled to use allowSyntheticDefaultImports instead",
+    "allowSyntheticDefaultImports": "Enables default imports from modules without default exports",
+    "strict": "Enables all strict type checking options for maximum type safety",
+    "types": "Includes Vite client types for import.meta and HMR support",
+    "references": "Points to separate configs for application code and test code",
+    "extends": "Inherits shared configuration from workspace root tsconfig.base.json"
+  }
 }
