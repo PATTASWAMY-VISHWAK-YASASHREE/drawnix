@@ -1,5 +1,13 @@
+// Import PlaitElement type definition for drawing elements
+// This ensures type safety for all drawable objects in the board
 import type { PlaitElement } from '@plait/core';
 
+// Default board data for new users or when no saved data exists
+// This creates a comprehensive example drawing that demonstrates all Drawnix features
+// Including: geometric shapes, flowchart elements, text, arrows, mind maps, and freehand drawings
+// The data structure represents a complete drawing board state with multiple interconnected elements
+// Each element has properties like: id, type, shape, position, styling, text content, etc.
+// This serves as both initial content and a feature showcase for new users
 export const initializeData: PlaitElement[] = [
   {
     id: 'Sfftf',
@@ -1722,4 +1730,15 @@ export const initializeData: PlaitElement[] = [
     ],
     strokeWidth: 2,
   },
+  // End of default board data array
+  // This comprehensive dataset provides users with:
+  // - Example geometric shapes (rectangles, circles, diamonds, etc.)
+  // - Flowchart elements (start/end terminals, process boxes, decision points)
+  // - Text elements with various formatting options
+  // - Arrow connections between elements
+  // - Mind map structures with hierarchical relationships
+  // - Freehand drawing paths and sketches
+  // - Multiple coordinate systems and positioning examples
+  // - Various styling options (colors, stroke widths, opacity, etc.)
+  // The data demonstrates the full capabilities of the Drawnix drawing platform
 ];

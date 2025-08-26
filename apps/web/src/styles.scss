@@ -1,29 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+/* 
+ * Global styles for the Drawnix web application
+ * These styles apply to the entire application and set up the foundation
+ * for the drawing canvas to work properly with full viewport coverage
+ */
+
+/* Reset default browser margins and padding for consistent layout */
 body {
     margin: 0;
     padding: 0;
 }
+
+/* Set up full viewport coverage for the drawing application
+ * This ensures the drawing canvas can utilize the entire browser window
+ * overflow: hidden prevents scrollbars from interfering with canvas interactions
+ */
 html,
 body {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
+    height: 100%; /* Full viewport height */
+    width: 100%;  /* Full viewport width */
+    overflow: hidden; /* Prevent scrollbars - canvas handles its own scrolling */
 }
+
+/* Root React mounting point - must fill entire viewport
+ * The drawing canvas is rendered within this container
+ * Maintains the same overflow behavior as body/html
+ */
 #root {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
+    height: 100%; /* Inherit full height from body */
+    width: 100%;  /* Inherit full width from body */
+    overflow: hidden; /* Consistent with parent overflow handling */
 }
+
+/* Debug console overlay styling
+ * Created dynamically by the addDebugLog function in app.tsx
+ * Provides a semi-transparent overlay for development debugging
+ */
 .drawnix-console {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    height: 200px;
-    width: 200px;
-    overflow: auto;
-    background-color: black;
-    color: white;
-    padding: 8px;
-    opacity: 0.5;
+    position: absolute; /* Position over the drawing canvas */
+    top: 50%; /* Center vertically in viewport */
+    transform: translateY(-50%); /* Precise vertical centering */
+    left: 0; /* Align to left edge of canvas */
+    height: 200px; /* Fixed height for debug console */
+    width: 200px;  /* Fixed width for debug console */
+    overflow: auto; /* Scroll when debug messages exceed container size */
+    background-color: black; /* Dark background for contrast */
+    color: white; /* White text for readability on dark background */
+    padding: 8px; /* Internal spacing for debug message content */
+    opacity: 0.5; /* Semi-transparent to not interfere with drawing */
+    /* Note: Console only appears when debug messages are logged via window.__drawnix__web__console() */
 }

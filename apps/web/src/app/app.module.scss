@@ -1,1 +1,17 @@
-/* Your styles goes here. */
+/* 
+ * Application-specific styles for the main App component
+ * This SCSS module provides scoped styling for the root application container
+ * 
+ * SCSS Modules automatically scope class names to prevent global CSS conflicts
+ * Classes defined here will be available as app.className in the component
+ * 
+ * Current status: Empty - styles are handled by the Drawnix component itself
+ * Future use cases:
+ * - App-level layout adjustments
+ * - Global theme overrides
+ * - Loading states and error boundaries styling
+ * - Responsive breakpoints for mobile vs desktop layouts
+ * - Integration-specific styling when embedding Drawnix
+ */
+
+/* Your styles go here. */
