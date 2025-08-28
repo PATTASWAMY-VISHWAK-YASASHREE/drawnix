@@ -72,6 +72,7 @@ export interface Translations {
   // Extra tools menu items
   'extraTools.mermaidToDrawnix': string;
   'extraTools.markdownToDrawnix': string;
+  'extraTools.laserEraser': string;
 }
 
 // Translation data
@@ -144,6 +145,7 @@ const translations: Record<Language, Translations> = {
     // Extra tools menu items
     'extraTools.mermaidToDrawnix': 'Mermaid 到 Drawnix',
     'extraTools.markdownToDrawnix': 'Markdown 到 Drawnix',
+    'extraTools.laserEraser': '激光橡皮擦',
   },
   en: {
     // Toolbar items
@@ -213,6 +215,7 @@ const translations: Record<Language, Translations> = {
     // Extra tools menu items
     'extraTools.mermaidToDrawnix': 'Mermaid to Drawnix',
     'extraTools.markdownToDrawnix': 'Markdown to Drawnix',
+    'extraTools.laserEraser': 'Laser Eraser',
   },
 };
 

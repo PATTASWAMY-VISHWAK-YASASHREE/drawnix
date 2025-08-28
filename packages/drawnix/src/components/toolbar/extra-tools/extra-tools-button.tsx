@@ -5,7 +5,7 @@ import { useState } from "react";
 import { ToolButton } from "../../tool-button";
 import { ExtraToolsIcon } from "../../icons";
 import Menu from "../../menu/menu";
-import { MarkdownToDrawnixItem, MermaidToDrawnixItem } from "./menu-items";
+import { MarkdownToDrawnixItem, MermaidToDrawnixItem, LaserEraserItem } from "./menu-items";
 import { useI18n } from "../../../i18n";
 
 export const ExtraToolsButton = () => {
@@ -42,6 +42,7 @@ export const ExtraToolsButton = () => {
             setAppMenuOpen(false);
           }}
         >
+          <LaserEraserItem></LaserEraserItem>
           <MermaidToDrawnixItem></MermaidToDrawnixItem>
           <MarkdownToDrawnixItem></MarkdownToDrawnixItem>
         </Menu>

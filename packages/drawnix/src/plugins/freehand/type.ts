@@ -33,6 +33,7 @@ export enum FreehandShape {
   feltTipPen = 'feltTipPen',
   artisticBrush = 'artisticBrush',
   markerHighlight = 'markerHighlight',
+  laserEraser = 'laserEraser',
 }
 
 export const FREEHAND_TYPE = 'freehand';
