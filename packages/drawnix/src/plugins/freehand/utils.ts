@@ -20,7 +20,7 @@ import {
 } from '@plait/draw';
 
 export function getFreehandPointers() {
-  return [FreehandShape.feltTipPen];
+  return [FreehandShape.feltTipPen, FreehandShape.laserEraser];
 }
 
 export const createFreehandElement = (

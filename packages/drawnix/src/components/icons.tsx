@@ -502,6 +502,22 @@ export const MarkdownLogoIcon = createIcon(
   </svg>
 );
 
+export const EraserIcon = createIcon(
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <g stroke="none" fill="currentColor">
+      <path d="M8.55 0.45C8.85 0.15 9.35 0.15 9.65 0.45L15.55 6.35C15.85 6.65 15.85 7.15 15.55 7.45L10.4 12.6L13.3 15.5C13.6 15.8 13.6 16.3 13.3 16.6C13 16.9 12.5 16.9 12.2 16.6L9.3 13.7L7.45 15.55C7.15 15.85 6.65 15.85 6.35 15.55L0.45 9.65C0.15 9.35 0.15 8.85 0.45 8.55L8.55 0.45ZM9.1 1.9L1.9 9.1L6.9 14.1L14.1 6.9L9.1 1.9ZM3.5 9.1L6.9 12.5L12.5 6.9L9.1 3.5L3.5 9.1Z"/>
+    </g>
+  </svg>
+);
+
+export const LaserIcon = createIcon(
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <g stroke="none" fill="currentColor">
+      <path d="M2 8L14 8M2 8L3.5 6.5M2 8L3.5 9.5M14 8L12.5 6.5M14 8L12.5 9.5M8 2L8 4M8 12L8 14M11.5 4.5L10.5 5.5M4.5 11.5L5.5 10.5M11.5 11.5L10.5 10.5M4.5 4.5L5.5 5.5" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+    </g>
+  </svg>
+);
+
 export const LinkIcon = createIcon(
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
     <g stroke="none" fill="currentColor">
