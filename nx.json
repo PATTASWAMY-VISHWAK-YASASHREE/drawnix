@@ -1,10 +1,7 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
@@ -28,24 +25,9 @@
         "serveStaticTargetName": "serve-static"
       }
     },
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
-    },
-    {
-      "plugin": "@nx/playwright/plugin",
-      "options": {
-        "targetName": "e2e"
-      }
-    },
-    {
-      "plugin": "@nx/jest/plugin",
-      "options": {
-        "targetName": "test"
-      }
-    }
+    { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } },
+    { "plugin": "@nx/playwright/plugin", "options": { "targetName": "e2e" } },
+    { "plugin": "@nx/jest/plugin", "options": { "targetName": "test" } }
   ],
   "generators": {
     "@nx/react": {
@@ -55,9 +37,7 @@
         "linter": "eslint",
         "bundler": "vite"
       },
-      "component": {
-        "style": "scss"
-      },
+      "component": { "style": "scss" },
       "library": {
         "style": "scss",
         "linter": "eslint",
@@ -69,16 +49,9 @@
     "changelog": {
       "workspaceChangelog": true,
       "file": "CHANGELOG.md",
-      "git": {
-        "commit": false,
-        "tag": false
-      }
+      "git": { "commit": false, "tag": false }
     },
-    "version": {
-      "git": {
-        "commit": false,
-        "tag": false
-      }
-    }
-  }
+    "version": { "git": { "commit": false, "tag": false } }
+  },
+  "nxCloudAccessToken": "ZGFkYjU1MTctYzM4Zi00NWU1LTllMGQtZGFmNzI2NDVkN2JifHJlYWQtd3JpdGU="
 }
